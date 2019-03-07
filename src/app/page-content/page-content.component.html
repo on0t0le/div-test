@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="menu">
+    Menu
+    <mat-action-list>
+      <button *ngFor="let item of items; let selectedObj of index" mat-list-item
+        (click)="getItem(selectedObj)">{{item.name}}</button>
+      <button mat-list-item (click)="addBtnPushed = !addBtnPushed">Add item</button>
+    </mat-action-list>
+  </div>
+  <div class="content">
+    <div *ngIf="!addBtnPushed; then contentBlock else addBlock"></div>
+    <ng-template #contentBlock>
+      Content
+      <p>
+        {{selectedItem.content}}
+      </p>
+      <p>
+        <button mat-raised-button color="accent" (click)="checker()">Check</button>
+      </p>
+      {{addBtnPushed}}
+    </ng-template>
+    <ng-template #addBlock>
+      Else template
+    </ng-template>
+  </div>
+</div>

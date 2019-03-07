@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+  }
+  
+  .menu{
+      flex: 30%;
+  }
+
+  .content {
+    flex: 70%;
+  }
