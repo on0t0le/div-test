@@ -20,7 +20,16 @@
       {{addBtnPushed}}
     </ng-template>
     <ng-template #addBlock>
-      Else template
+      Add item
+      <form [formGroup]="itemGroup">
+        <mat-form-field>
+          <input matInput placeholder="Input name" formControlName="itemName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Input control" formControlName="itemContent">
+        </mat-form-field>
+      </form>
+      <button mat-button (click)="commitNewItem()">Commit</button>
     </ng-template>
   </div>
 </div>
